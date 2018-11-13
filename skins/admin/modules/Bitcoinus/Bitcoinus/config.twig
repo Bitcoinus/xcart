@@ -1,0 +1,91 @@
+<table cellspacing="1" cellpadding="5" class="settings-table">
+  <tr>
+    <td class="setting-name">
+    <label for="settings_login">{{ t('Project ID') }}</label>
+    </td>
+    <td>
+    <input type="text" id="settings_projectid" name="settings[projectid]" value="{{ this.paymentMethod.getSetting('projectid') }}" class="validate[required,maxSize[255]]" />
+    </td>
+  </tr>
+  <tr>
+    <td class="setting-name">
+    <label for="settings_secretkey">{{ t('Secret key') }}</label>
+    </td>
+    <td>
+    <input type="text" id="settings_secretkey" name="settings[secretkey]" size="64" value="{{ this.paymentMethod.getSetting('secretkey') }}" class="validate[required,maxSize[255]]" />
+    </td>
+  </tr>
+    <td class="setting-name">
+    <label for="settings_discount">{{ t('BITS discount') }}</label>   
+    </td>
+    <td>
+    <select id="settings_discount" name="settings[discount]">
+      <option value=" " {% if this.isSelected(this.paymentMethod.getSetting('discount'), '') %} selected="selected" {% endif %}>{{ t('No discount') }}</option>
+      <option value=1 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 1) %} selected="selected" {% endif %}>{{ t('1%') }}</option>
+      <option value=2 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 2) %} selected="selected" {% endif %}>{{ t('2%') }}</option>
+      <option value=3 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 3) %} selected="selected" {% endif %}>{{ t('3%') }}</option>
+      <option value=4 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 4) %} selected="selected" {% endif %}>{{ t('4%') }}</option>
+      <option value=5 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 5) %} selected="selected" {% endif %}>{{ t('5%') }}</option>
+      <option value=6 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 6) %} selected="selected" {% endif %}>{{ t('6%') }}</option>
+      <option value=7 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 7) %} selected="selected" {% endif %}>{{ t('7%') }}</option>
+      <option value=8 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 8) %} selected="selected" {% endif %}>{{ t('8%') }}</option>
+      <option value=9 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 9) %} selected="selected" {% endif %}>{{ t('9%') }}</option>
+      <option value=10 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 10) %} selected="selected" {% endif %}>{{ t('10%') }}</option>
+      <option value=15 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 15) %} selected="selected" {% endif %}>{{ t('15%') }}</option>
+      <option value=20 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 20) %} selected="selected" {% endif %}>{{ t('20%') }}</option>
+      <option value=25 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 25) %} selected="selected" {% endif %}>{{ t('25%') }}</option>
+      <option value=30 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 30) %} selected="selected" {% endif %}>{{ t('30%') }}</option>
+      <option value=35 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 35) %} selected="selected" {% endif %}>{{ t('35%') }}</option>
+      <option value=40 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 40) %} selected="selected" {% endif %}>{{ t('40%') }}</option>
+      <option value=45 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 45) %} selected="selected" {% endif %}>{{ t('45%') }}</option>
+      <option value=50 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 50) %} selected="selected" {% endif %}>{{ t('50%') }}</option>
+      <option value=55 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 55) %} selected="selected" {% endif %}>{{ t('55%') }}</option>
+      <option value=60 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 60) %} selected="selected" {% endif %}>{{ t('60%') }}</option>
+      <option value=65 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 65) %} selected="selected" {% endif %}>{{ t('65%') }}</option>
+      <option value=70 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 70) %} selected="selected" {% endif %}>{{ t('70%') }}</option>
+      <option value=75 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 75) %} selected="selected" {% endif %}>{{ t('75%') }}</option>
+      <option value=80 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 80) %} selected="selected" {% endif %}>{{ t('80%') }}</option>
+      <option value=85 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 85) %} selected="selected" {% endif %}>{{ t('85%') }}</option>
+      <option value=90 {% if this.isSelected(this.paymentMethod.getSetting('discount'), 90) %} selected="selected" {% endif %}>{{ t('90%') }}</option>
+    </select>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    </td>
+    <td>
+      <p style="font-size:13px;"> {{ t("Discount for BITS payments, %") }} </p>
+    </td>
+  </tr>
+  <tr>
+    <td class="setting-name">
+    <label for="settings_info">{{ t('Purchased items info') }}</label>
+    </td>
+    <td>
+    <select id="settings_info" name="settings[info]">
+      <option value="1" {% if this.isSelected(this.paymentMethod.getSetting('info'), '1') %} selected="selected" {% endif %}>{{ t('Enabled') }}</option>
+      <option value="2" {% if this.isSelected(this.paymentMethod.getSetting('info'), '2') %} selected="selected" {% endif %}>{{ t('Disabled') }}</option>
+    </select>
+    </td>
+  </tr>
+  <tr>
+    <td>
+    </td>
+    <td>
+      <p style="font-size:13px;"> {{ t("Enable this if you want to send Bitcoinus information about purchased items. Bitcoinus doesn't ") }}</br> {{ t("store this information, it is only displayed for your client while payment is being proseccessed") }}</p>
+    </td>
+  </tr>
+  <tr>
+  <tr>
+    <td class="setting-name">
+    <label for="settings_mode">{{ t('Processing mode') }}</label>
+    </td>
+    <td>
+    <select id="settings_mode" name="settings[mode]">
+      <option value="test" {% if this.isSelected(this.paymentMethod.getSetting('mode'), 'testd') %} selected="selected" {% endif %}>{{ t('Test mode') }}</option>
+      <option value="live" {% if this.isSelected(this.paymentMethod.getSetting('mode'), 'live') %} selected="selected" {% endif %}>{{ t('Live mode') }}</option>
+    </select>
+    </td>
+  </tr>
+  <tr>
+</table>

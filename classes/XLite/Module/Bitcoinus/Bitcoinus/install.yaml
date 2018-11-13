@@ -1,0 +1,15 @@
+
+XLite\Model\Payment\Method:
+  - service_name: Bitcoinus
+    class: Module\Bitcoinus\Bitcoinus\Model\Payment\Processor\Bitcoinus
+    type: C
+    translations:
+      - code: en
+        name: Bitcoinus
+    settings:
+      - name: projectid
+      - name: secretkey
+      - name: discount
+      - name: info
+      - name: mode
+        value: live
